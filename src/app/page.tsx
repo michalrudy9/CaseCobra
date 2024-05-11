@@ -1,9 +1,11 @@
-import { Check, Star } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Check, Star } from "lucide-react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
 import { Icons } from "@/components/Icons";
 import { Reviews } from "@/components/Reviews";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -246,6 +248,18 @@ export default function Home() {
               <Check className="h-5 w-5 text-green-600 inline mr-1.5" />5 year
               print warranty
             </li>
+
+            <div className="flex justify-center">
+              <Link
+                href="/configure/upload"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "mx-auto mt-8",
+                })}
+              >
+                Create your case now <ArrowRight className="h-4 w-4 ml-1.5" />
+              </Link>
+            </div>
           </ul>
         </MaxWidthWrapper>
       </section>
