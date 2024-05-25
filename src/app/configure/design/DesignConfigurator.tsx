@@ -1,10 +1,13 @@
 "use client";
 
 import NextImage from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import { ArrowRight, Check, ChevronsUpDown } from "lucide-react";
 import { cn, formatPrice } from "@/lib/utils";
+import { useMutation } from "@tanstack/react-query";
+import { useUploadThing } from "@/lib/uploadthing";
 
 import HandleComponent from "@/components/HandleComponent";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -30,11 +33,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useUploadThing } from "@/lib/uploadthing";
 import { useToast } from "@/components/ui/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { saveConfig as _saveConfig, SaveConfigArgs } from "./actions";
-import { useRouter } from "next/navigation";
+import { saveConfig as _saveConfig, SaveConfigArgs } from "@/app/configure/design/actions";
+
 
 interface DesignConfiguratorProps {
   configId: string;
