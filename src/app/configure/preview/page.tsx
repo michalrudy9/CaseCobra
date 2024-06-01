@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import DesignPreview from "./DesignPreview";
 
 interface PageProps {
-  serachParams: {
+  searchParams: {
     [key: string]: string | string[] | undefined;
   };
 }
