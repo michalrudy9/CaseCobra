@@ -34,8 +34,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/components/ui/use-toast";
-import { saveConfig as _saveConfig, SaveConfigArgs } from "@/app/configure/design/actions";
-
+import {
+  saveConfig as _saveConfig,
+  SaveConfigArgs,
+} from "@/app/configure/design/actions";
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -70,12 +72,12 @@ const DesignConfigurator = ({
   const [options, setOptions] = useState<{
     color: (typeof COLORS)[number];
     model: (typeof MODELS.options)[number];
-    mateial: (typeof MATERIALS.options)[number];
+    material: (typeof MATERIALS.options)[number];
     finish: (typeof FINISHES.options)[number];
   }>({
     color: COLORS[0],
     model: MODELS.options[0],
-    mateial: MATERIALS.options[0],
+    material: MATERIALS.options[0],
     finish: FINISHES.options[0],
   });
 
@@ -383,7 +385,7 @@ const DesignConfigurator = ({
             <div className="w-full flex gap-6 items-center">
               <p className="font-maedium whitespace-nowrap">
                 {formatPrice(
-                  (BASE_PRICE + options.finish.price + options.mateial.price) /
+                  (BASE_PRICE + options.finish.price + options.material.price) /
                     100
                 )}
               </p>
@@ -393,7 +395,7 @@ const DesignConfigurator = ({
                     configId,
                     color: options.color.value,
                     finish: options.finish.value,
-                    material: options.mateial.value,
+                    material: options.material.value,
                     model: options.model.value,
                   })
                 }
